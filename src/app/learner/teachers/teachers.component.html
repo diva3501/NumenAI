@@ -1,0 +1,84 @@
+<div class="teachers_component">
+  <header class="profile-header">
+    <div class="container head-container">
+      <div class="profile-section">
+        <img src="/assets/img/avatar.png" alt="Profile Image" class="profile-pic">
+        <div class="user-info">
+          <h1 class="username">{{username}}</h1>
+          <p class="user-bio">You are champion!!!!</p>
+        </div>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/profile">Exp: 1000</button>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/learner/askai">Ask AI </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-2 nav_content mt-0">
+        <main class="container">
+          <nav id="navbar">
+            <section class="mt-4 text-center">
+              <h5 class="">My Stuff</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link my-3 p-3" routerLink="/courses">Courses</a></li>
+              </ul>
+            </section>
+            <section class="text-center">
+              <h5>My Account</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link my-3 p-3" routerLink="/progress">Progress</a></li>
+                <li><a class="nav-link my-3 p-3" routerLink="/profile">Profile</a></li>
+                <li><a class="nav-link my-3 p-3" routerLink="/teachers">Teachers</a></li>
+              </ul>
+            </section>
+          </nav>
+        </main>
+
+      </div>
+
+      <div class="col-sm-12 col-md-10 dashboard">
+        <div class="row align-items-center my-4 m-4">
+          <div class="col">
+            <h4>My teachers</h4>
+          </div>
+        </div>
+        <div class="row">
+          <section class="main-section col-md-6 text-secondary" id="courses">
+          </section>
+        </div>
+        <hr>
+
+
+        <div class="container my-5 m-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h4>Join a class</h4>
+              <button type="button" class="btn btn-primary">Class Code</button>
+            </div>
+            <div class="class sm-12 col-md-6">
+              <h4>Add a Education channel</h4>
+              <label for="channel">Enter your favorite channels</label><br>
+              <input type="url" id="channel" name="channelname">
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

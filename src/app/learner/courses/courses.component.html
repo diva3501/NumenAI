@@ -1,0 +1,148 @@
+<div *ngIf="!isLoggedIn" class="alert alert-warning custom-alert" role="alert">
+  <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+  Please <a routerLink="/learner/login" class="alert-link">login</a> or
+  <a routerLink="/learner/signup" class="alert-link">register</a> to access the courses.
+</div>
+
+<div *ngIf="isLoggedIn" class="courses_component">
+  <header class="profile-header">
+    <div class="container head-container">
+      <div class="profile-section">
+        <img src="/assets/img/avatar.png" alt="Profile Image" class="profile-pic">
+        <div class="user-info">
+          <h1 class="username">{{username}}</h1>
+          <p class="user-bio">You are champion!!!!</p>
+        </div>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/profile">Exp: 1000</button>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/learner/askai">Ask AI </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Loader -->
+  <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading" class="courses_component">
+
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-sm-12 col-md-2 nav_content mt-0">
+          <main class="container">
+            <nav id="navbar">
+              <section class="mt-4 text-center">
+                <h5 class="">My Stuff</h5>
+                <ul class="list-unstyled">
+                  <li><a class="nav-link my-3 p-3" routerLink="/courses">Courses</a></li>
+                </ul>
+              </section>
+              <section class="text-center">
+                <h5>My Account</h5>
+                <ul class="list-unstyled">
+                  <li><a class="nav-link my-3 p-3" routerLink="/progress">Progress</a></li>
+                  <li><a class="nav-link my-3 p-3" routerLink="/profile">Profile</a></li>
+                  <li><a class="nav-link my-3 p-3" routerLink="/teachers">Teachers</a></li>
+                </ul>
+              </section>
+            </nav>
+          </main>
+
+        </div>
+
+        <div class="col-sm-12 col-md-10 dashboard">
+          <div class="row align-items-center">
+            <div class="col">
+              <h1>My Courses</h1>
+            </div>
+            <div class="col-auto">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Enroll
+              </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Enroll Courses</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="modal-body">
+                        <div class="styled-checkbox m-2" *ngFor="let course of unenrolledCourses; index as i">
+                          <input type="checkbox" [id]="course" [(ngModel)]="courseSelections[course]">
+                          <label [for]="course">{{ unenrolledCourseName[i] }}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" (click)="enrollCourse()"
+                        data-bs-dismiss="modal">Enroll now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-10 dashboard">
+            <div class="row">
+              <h5 class="py-3 ouruser">Welcome, {{ firstname }}</h5>
+              <div class="col-md-4 mb-4" *ngFor="let course of courses; index as i">
+                <!-- Modal -->
+                <div class="modal fade" id="unenrollModal{{i}}" tabindex="-1"
+                  attr.aria-labelledby="unenrollModalLabel{{i}}" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="unenrollModalLabel{{i}}">Unenroll Course - {{ courseName[i] }}
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="modal-body">
+                          <p>Are you sure you want to Unenroll? You will lose all your data.</p>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" (click)="unenrollCourse(course)"
+                          data-bs-dismiss="modal">Confirm</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards -->
+                <div class="card course-card">
+                  <div class="card-body">
+                    <div class="auto d-flex justify-content-between">
+                      <h5 class="card-title mb-0">{{ courseName[i] }}</h5>
+                      <button type="button" class="btn btn-danger btn-sm" style="z-index: 2; position: relative;"
+                        data-bs-toggle="modal" attr.data-bs-target="#unenrollModal{{i}}">Unenroll</button>
+                    </div>
+                    <p class="card-text">Let's dive into the fun quizes!!!!</p>
+                    <a routerLink="/{{course}}" class="stretched-link"></a>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-muted">
+                    <span class="proceed-arrow">Proceed <i class="fa fa-arrow-right"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

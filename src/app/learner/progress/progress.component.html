@@ -1,0 +1,122 @@
+<div class="progress_component">
+  <header class="profile-header">
+    <div class="container head-container">
+      <div class="profile-section">
+        <img src="/assets/img/avatar.png" alt="Profile Image" class="profile-pic">
+        <div class="user-info">
+          <h1 class="username">{{username}}</h1>
+          <p class="user-bio">You are champion!!!!</p>
+        </div>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/profile">Exp: 1000</button>
+      </div>
+      <div class="user-actions">
+        <button class="profile-btn fa fa-bolt" routerLink="/learner/askai">Ask AI </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-sm-12 col-md-2 nav_content mt-0">
+        <main class="container">
+          <nav id="navbar">
+            <section class="mt-4 text-center">
+              <h5 class="">My Stuff</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link my-3 p-3" routerLink="/courses">Courses</a></li>
+              </ul>
+            </section>
+            <section class="text-center">
+              <h5>My Account</h5>
+              <ul class="list-unstyled">
+                <li><a class="nav-link my-3 p-3" routerLink="/progress">Progress</a></li>
+                <li><a class="nav-link my-3 p-3" routerLink="/profile">Profile</a></li>
+                <li><a class="nav-link my-3 p-3" routerLink="/teachers">Teachers</a></li>
+              </ul>
+            </section>
+          </nav>
+        </main>
+
+      </div>
+
+      <div class="col-sm-12 col-md-10 dashboard">
+        <div class="row align-items-center">
+          <div class="col">
+            <h4>My Progress <a routerLink="/aboutus" class="badge-pill badge-primary">Learn more</a></h4>
+          </div>
+        </div>
+        <div class="row">
+          <section class="main-section col-md-6 text-secondary" id="courses">
+            <p class="h6">Latest activity may take some time to show below.
+            </p>
+          </section>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <select class="custom-select ">
+              <option selected>Last 7 days</option>
+              <option value="1">Last 30 days</option>
+              <option value="2">All time</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <select class="custom-select ">
+              <option selected>Last 7 days</option>
+              <option value="1">Last 30 days</option>
+              <option value="2">All time</option>
+            </select>
+          </div>
+          <div class="col-sm-12 col-md-4">
+            <select class="custom-select ">
+              <option selected>Last 7 days</option>
+              <option value="1">Last 30 days</option>
+              <option value="2">All time</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="container mt-3">
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">ACTIVITY</th>
+                      <th scope="col">LEVEL</th>
+                      <th scope="col">CHANGE</th>
+                      <th scope="col">CORRECT/TOTAL PROBLEMS</th>
+                      <th scope="col">TIME (MIN)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <i class="fa fa-play" aria-hidden="true"></i>
+                        What is Programming?
+                        <small class="text-muted">Computer programming - JavaScript an...</small>
+                      </td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>1</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

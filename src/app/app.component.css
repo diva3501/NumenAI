@@ -1,0 +1,29 @@
+.navbar{
+  background-color: #5e8d83;
+}
+
+.logo-text{
+  margin-left:12px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+.nav-logo{
+  margin-bottom: 6px;;
+}
+
+.navbar-collapse{
+  font-size: larger;
+}
+
+.main-page {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: middle;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: xx-large;
+  font-weight: 900;
+}

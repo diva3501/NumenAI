@@ -1,0 +1,161 @@
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #d3bdcc;
+}
+
+.head-container {
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info .username {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.user-info .user-bio {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 0;
+}
+
+.profile-btn {
+  padding: 5px 15px;
+  border: 3px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: borderFade 3s infinite linear;
+}
+
+@keyframes borderFade {
+  0% {
+    border-color: #007bff;
+  }
+
+  25% {
+    border-color: #ff0000;
+  }
+
+  50% {
+    border-color: #00ff00;
+  }
+
+  75% {
+    border-color: #0000ff;
+  }
+
+  100% {
+    border-color: #007bff;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 240px;
+  height: 240px;
+  perspective: 1000px;
+  margin: auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background-color: #DAA520;
+  border-radius: 80px 10px;
+}
+
+.flip-card-front img {
+  width: 46%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.flip-card-back {
+  background-color: #072d58;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.flip-card-back p {
+  font-size: 1em;
+}
+
+.badge-count {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0.25em 0.5em;
+  border-radius: 10px;
+  font-size: 0.8em;
+  margin-left: 0.5em;
+}
+
+.card-title {
+  color: white;
+}
+
+.dashboard .row .col {
+  border-right: 2px dashed #ccc;
+}
+
+.badge-progress {
+  text-align: center;
+  /* display: flex;
+  position: absolute; */
+  top: 35%;
+  left: 45%;
+}
+
+@media screen and (max-width: 500px) {
+  .profile-btn {
+    margin: 4px;
+    padding: 2px 7px;
+    border: 3px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: borderFade 3s infinite linear;
+  }
+}
