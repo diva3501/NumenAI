@@ -2,7 +2,7 @@ const api_key = "API_KEY_HERE";
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: process.env["FIREBASE_API_KEY"],
+    apiKey: "AIzaSyA7DxKo-qJcakHfYc5xFQh167iMkcyff_E",
     authDomain: "personaltaskmanager-382c0.firebaseapp.com",
     projectId: "personaltaskmanager-382c0",
     storageBucket: "personaltaskmanager-382c0.firebasestorage.app",
